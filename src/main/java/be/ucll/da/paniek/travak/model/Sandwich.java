@@ -5,21 +5,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Entity
 public class Sandwich {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID id;
     private String name;
-    private BigDecimal price;
     private String ingredients;
+    private BigDecimal price;
 
     public Sandwich() {
     }
 
-    public Sandwich(String name, BigDecimal price, String ingredients) {
+    public Sandwich(String name, String ingredients, BigDecimal price) {
         setName(name);
         setPrice(price);
         setIngredients(ingredients);
@@ -49,11 +50,11 @@ public class Sandwich {
         this.ingredients = ingredients;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
