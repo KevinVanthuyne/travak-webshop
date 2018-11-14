@@ -1,17 +1,17 @@
-package model;
+package be.ucll.da.paniek.travak.model;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Order {
 
-    private UUID id;
+    private Long id;
     private String mobileNr;
     private LocalDateTime timestamp;
     private String breadType;
-    private UUID sandwichId;
+    private Long sandwichId;
 
-    public Order(UUID id, String mobileNr, LocalDateTime timestamp, String breadType, UUID sandwichId) {
+    public Order(Long id, String mobileNr, LocalDateTime timestamp, String breadType, Long sandwichId) {
         setId(id);
         setMobileNr(mobileNr);
         setTimestamp(timestamp);
@@ -19,11 +19,11 @@ public class Order {
         setSandwichId(sandwichId);
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -51,11 +51,11 @@ public class Order {
         this.breadType = breadType;
     }
 
-    public UUID getSandwichId() {
+    public Long getSandwichId() {
         return sandwichId;
     }
 
-    public void setSandwichId(UUID sandwichId) {
+    public void setSandwichId(Long sandwichId) {
         this.sandwichId = sandwichId;
     }
 }

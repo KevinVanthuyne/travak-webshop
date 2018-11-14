@@ -1,20 +1,28 @@
-package model;
+package be.ucll.da.paniek.travak.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.UUID;
 
+@Entity
 public class Sandwich {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
     private BigDecimal price;
     private String ingredients;
-    private UUID id;
 
-    public Sandwich(String name, BigDecimal price, String ingredients, UUID id) {
+    public Sandwich() {
+    }
+
+    public Sandwich(String name, BigDecimal price, String ingredients) {
         setName(name);
         setPrice(price);
         setIngredients(ingredients);
-        setId(id);
     }
 
     public String getName() {
@@ -41,11 +49,21 @@ public class Sandwich {
         this.ingredients = ingredients;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", ingredients='" + ingredients + '\'' +
+                '}';
     }
 }

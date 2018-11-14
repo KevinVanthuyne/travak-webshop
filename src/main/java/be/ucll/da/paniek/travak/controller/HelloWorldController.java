@@ -1,4 +1,4 @@
-package controller;
+package be.ucll.da.paniek.travak.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
