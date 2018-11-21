@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -17,11 +18,11 @@ public class SandwichOrder {
     private UUID sandwichId;
     private String name;
     private BreadType breadType;
-    private LocalDate creationDate;
+    private LocalDateTime creationDate;
     private BigDecimal price;
     private String mobilePhoneNumber;
 
-    public SandwichOrder(UUID sandwichId, String name, BreadType breadType, LocalDate creationDate, BigDecimal price, String mobilePhoneNumber) {
+    public SandwichOrder(UUID sandwichId, String name, BreadType breadType, LocalDateTime creationDate, BigDecimal price, String mobilePhoneNumber) {
         setSandwichId(sandwichId);
         setName(name);
         setBreadType(breadType);
@@ -64,11 +65,11 @@ public class SandwichOrder {
         this.breadType = breadType;
     }
 
-    public LocalDate getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
