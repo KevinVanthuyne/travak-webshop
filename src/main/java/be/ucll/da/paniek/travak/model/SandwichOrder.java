@@ -1,6 +1,9 @@
 package be.ucll.da.paniek.travak.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -8,6 +11,8 @@ import java.util.UUID;
 @Entity
 public class SandwichOrder {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private UUID sandwichId;
     private String name;
