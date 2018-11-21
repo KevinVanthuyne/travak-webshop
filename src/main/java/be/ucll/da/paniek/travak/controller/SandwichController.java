@@ -18,6 +18,11 @@ public class SandwichController {
 
     public SandwichController(SandwichRepository repo) {
         this.repo = repo;
+        // add some dummy data
+
+        repo.save(new Sandwich("Smos kaas & hesp", "Sla, tomatte, kaas, hesp, mayo", new BigDecimal("2.30")));
+        repo.save(new Sandwich("Broodje americain", "Uitjes, americain", new BigDecimal("2.60")));
+        repo.save(new Sandwich("Kip hawaii", "Kippenblokjes, ananas, tuinkers, cocktailsaus", new BigDecimal("3.00")));
     }
 
     @GetMapping
@@ -49,10 +54,5 @@ public class SandwichController {
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-    }
-
-    @RequestMapping("/addStandard")
-    public void add() {
-        repo.save(new Sandwich("Arne", "lekker", new BigDecimal("1.12")));
     }
 }
