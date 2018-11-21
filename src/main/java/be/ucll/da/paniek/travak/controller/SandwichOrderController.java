@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -26,11 +27,16 @@ public class SandwichOrderController {
 
     @PostMapping
     public SandwichOrder addSandwichOrder(@RequestBody SandwichOrder sandwichOrder) {
+        // TODO returns creationDate as null
         return repo.save(sandwichOrder);
     }
 
     @GetMapping
-    public Iterable<SandwichOrder> getAll() {
-        return repo.findAll();
+    // TODO
+    public Iterable<SandwichOrder> getOrdersOfDate(@RequestParam(required = false) LocalDate date) {
+        if (date == null) {
+            return repo.findAll();
+        }
+        return repo.findByCreationDate(date);
     }
 }
