@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -31,7 +30,8 @@ public class SandwichOrder {
         setMobilePhoneNumber(mobilePhoneNumber);
     }
 
-    public SandwichOrder() {}
+    public SandwichOrder() {
+    }
 
     public UUID getId() {
         return id;

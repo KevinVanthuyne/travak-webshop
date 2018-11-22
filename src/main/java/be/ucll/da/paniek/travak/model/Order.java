@@ -1,7 +1,6 @@
 package be.ucll.da.paniek.travak.model;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class Order {
 
